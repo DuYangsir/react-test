@@ -1,3 +1,3 @@
 # react-test
-### react综合构建项目
+### react 基于 create-react-app 构建项目
 ## 技术栈
