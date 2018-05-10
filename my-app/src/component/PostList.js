@@ -1,5 +1,6 @@
 import React,{ Component } from "react";
 import PostItem from "./PostItem"
+import './style.less'
 
 const data = [
   {title:"大家一起去讨论",author:"张三",date:"2018-01-01"},
@@ -8,9 +9,9 @@ const data = [
 ]
 
 const element = (
-  <div>
+  <div className="postlist-wrap">
     帖子列表：
-    <ul>
+    <ul className="postlist-item">
       {data.map(item =>
         <PostItem 
           title = {item.title}

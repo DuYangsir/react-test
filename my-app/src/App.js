@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './assets/style/App.less';
 
 const element = (
   <div className="App">

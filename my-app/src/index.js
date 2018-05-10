@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// 组件
 import App from './App';
 import PostList from './component/PostList'
 
