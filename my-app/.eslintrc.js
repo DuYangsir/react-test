@@ -104,6 +104,7 @@ module.exports = {
   "settings": {
     "import/ignore": [
       "node_modules",
+      "config",
       ".eslintrc.json"
     ]
   }

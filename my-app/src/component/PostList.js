@@ -28,9 +28,9 @@ class PostList extends Component {
           date: '2018-05-01',
           vote: 0
         }
-      ]
+      ],
+      current: null
     }
-    this.handleVote = this.handleVote.bind(this)
   }
 
   componentDidMount() {
@@ -38,6 +38,7 @@ class PostList extends Component {
   }
 
   handleVote(id) {
+    // let event = Event || window.event
     const posts = this.state.posts.map(item => {
       const newItem = id === item.id ? { ...item,
         vote: ++item.vote
@@ -45,19 +46,30 @@ class PostList extends Component {
       return newItem
     })
 
+    // event.stopPropagation()
+
     this.setState({
       posts
+    })
+
+  }
+  handleClick(item){
+    this.setState({
+      current: item
     })
   }
 
   render() {
     return ( <div className="postlist-wrap" >
       帖子列表： < ul className="postlist-item" > {
-        this.state.posts.map((item, index) =>
+        this.state.posts.map((item) =>
           < PostItem
-              key={index}
-              onVote={this.handleVote}
+              current={this.state.current}
+              key={item.id}
+              onClicks={this.handleClick.bind(this, item.id)}
+              onVote={this.handleVote.bind(this)}
               post={item}
+
           />
         )
       } </ul>

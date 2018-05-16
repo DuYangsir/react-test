@@ -1,2 +1,5 @@
+config/
+build/
 node_modules/
 .eslintrc.json
+src/App.test.js

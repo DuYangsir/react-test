@@ -6,9 +6,14 @@ function PostItem(props){
   const handleClick = ()=> {
     props.onVote(props.post.id)
   }
-  const {post} = props
+  const handleClicks = ()=> {
+    props.onClicks(props.post.id)
+  }
+  const {post, current} = props
   return(
-    <li>
+    <li className={current === post.id ? 'current' :''}
+        onClick={handleClicks}
+    >
       <div>
         {post.title}
       </div>
